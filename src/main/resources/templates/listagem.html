@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Gestão de Pessoas</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container my-2">
+    <h1>Contatos</h1>
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Numero</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="contato: ${listaContatos}">
+            <td th:text="${contato.id}"></td>
+            <td th:text="${contato.nome}"></td>
+            <td th:text="${contato.email}"></td>
+            <td th:text="${contato.numero}"></td>
+            <td>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="button">
+
+    <button class="btn btn-primary"><a href="/">Voltar para a página de cadastro</a></button>
+
+</div>
+</body>
+</html>

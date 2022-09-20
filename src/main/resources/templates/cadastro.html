@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org.br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de usuário</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form th:action="@{/cadastro}" th:object="${contato}" th:method="post">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" th:field="*{nome}" class="form-control" id="nome" name="nome">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" th:field="*{email}" class="form-control" id="email" name="email">
+    </div>
+    <div class="mb-3">
+        <label for="telefone" class="form-label">Telefone</label>
+        <input type="text" th:field="*{numero}" class="form-control" id="telefone" name="numero">
+        <button type="submit">Adicionar número</button>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar cadastro</button>
+</form>
+<div>
+    <button class="btn btn-primary"><a href="listagem">Lista de contatos</a></button>
+</div>
+
+</body>
+</html>
