@@ -17,7 +17,7 @@
 <form id="form" th:action="@{/cadastro}" th:object="${contato}" th:method="post">
     <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" th:field="*{nome}" placeholder="João do Exemplo" class="form-control" id="nome" name="nome" required auto>
+        <input type="text" th:field="*{nome}" placeholder="João do Exemplo" class="form-control" id="nome" name="nome" required autofocus>
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
@@ -25,7 +25,7 @@
     </div>
     <div class="mb-3">
         <label for="telefone" class="form-label">Telefone</label>
-        <input type="tel" th:field="*{numero}" placeholder="(51)91111-2222" class="form-control" id="telefone" name="numero" pattern="[1-9]{2}[1-9]{5}-[1-9]{4}" required>
+        <input type="tel" th:field="*{numero}" placeholder="5191234-5678" class="form-control" id="telefone" name="numero" pattern="[1-9]{2}[1-9]{5}-[1-9]{4}" required>
     </div>
     <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
