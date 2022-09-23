@@ -12,24 +12,25 @@
 </head>
 <body>
 
-<form th:action="@{/cadastro}" th:object="${contato}" th:method="post">
+<h1 class="titulo">Formulário de cadastro de contato</h1>
+
+<form id="form" th:action="@{/cadastro}" th:object="${contato}" th:method="post">
     <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" th:field="*{nome}" class="form-control" id="nome" name="nome">
+        <input type="text" th:field="*{nome}" placeholder="João do Exemplo" class="form-control" id="nome" name="nome" required auto>
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" th:field="*{email}" class="form-control" id="email" name="email">
+        <input type="email" th:field="*{email}" placeholder="joaodoexemplo@gmail.com" class="form-control" id="email" name="email" required>
     </div>
     <div class="mb-3">
         <label for="telefone" class="form-label">Telefone</label>
-        <input type="text" th:field="*{numero}" class="form-control" id="telefone" name="numero">
-        <button type="submit">Adicionar número</button>
+        <input type="tel" th:field="*{numero}" placeholder="(51)91111-2222" class="form-control" id="telefone" name="numero" pattern="[1-9]{2}[1-9]{5}-[1-9]{4}" required>
     </div>
-    <button type="submit" class="btn btn-primary">Enviar cadastro</button>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
 <div>
-    <button class="btn btn-primary"><a href="listagem">Lista de contatos</a></button>
+    <button class="btn btn-primary"><a class="links" href="listagem">Lista de contatos</a></button>
 </div>
 
 </body>
